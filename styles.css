@@ -24,7 +24,7 @@ body {
     display: grid;
     height: 80vh;
     background-color: #e0e0d5a3;
-    grid-template: .5fr 1fr 1fr 1fr .5fr / .5fr 1fr 1fr 1fr .5fr;
+    grid-template: .5fr 1.5fr .5fr 1.5fr .5fr / .5fr 1fr 1fr 1fr .5fr;
 }
 .btnCont {
     grid-column: 3;
@@ -71,6 +71,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     align-self: flex-end;
+    margin-top: -15px;
   }
   
 .close:hover,
@@ -89,7 +90,7 @@ body {
     position: relative;
     display: inline-block;
     outline: none;
-    border-radius: 20px;
+    border-radius: 4px;
     border: 2px solid #212529;
     background: #212529;
     font-size: 16px;
@@ -131,12 +132,48 @@ label {
     margin: 2px;
 }
 
+.content {
+  display: grid;
+  grid-area: 2 / 2 / 5 / 5;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
+.card {
+  display: grid;
+  grid-template: repeat(5, 1fr)/ 1fr 1fr;
+  height:17rem;
+  border-radius: 4px;
+  border-radius: 18px;
+  background: #f1f0e9;
+  box-shadow:  7px 7px 4px #adaca3,
+             -7px -7px 4px #ffffff;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.card>h3 {
+  text-decoration: underline;
+  font-weight: normal;
+  margin: 5px;
+  padding-left: 10px;
+}
+.card>p {
+  margin: 7px;
+}
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
+.switch {
+  margin-bottom: 15px;
+  margin-left: 7px;
+}
+.error {
+  display: hidden;
+  color: RED;
+}
 .slider {
     position: absolute;
     cursor: pointer;
@@ -188,6 +225,7 @@ label {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #cdcdc8;
+    height: 5vh;
 }
 
 .copyright {
