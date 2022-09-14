@@ -34,8 +34,10 @@ function addBookToLibrary(event) {
         title.value = "";
         pages.value = ""; 
     }
+    const cardElement = document.querySelector(".card");
     const read = document.getElementById("read");
     const slide = document.getElementById("slider");
+    const remove = document.querySelector(".remove");
     slide.addEventListener('change', function (event) {
         if (event.target.checked) {
             read.innerHTML = "READ";
@@ -43,7 +45,11 @@ function addBookToLibrary(event) {
             read.innerHTML = "UNREAD";
         }
     })
+    remove.onclick = function () {
+        cardElement.remove();
+    }
 }
+
 
 const error = document.querySelector(".error");
 const content = document.querySelector(".content");
@@ -54,6 +60,9 @@ const add = document.querySelector(".add");
 const modal = document.querySelector(".modal");
 const btn = document.querySelector(".new");
 const span = document.querySelector(".close");
+
+
+
 
 btn.onclick = function() {
     modal.style.display = "block";
