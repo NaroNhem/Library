@@ -97,14 +97,19 @@ window.onclick = function(event) {
   }
 
 add.addEventListener('click', function (e) {
-    addBookToLibrary();
-    modal.style.display = "none";
-    author.value ="";
-    title.value = "";
-    pages.value = "";
-    content.innerHTML = "";
-    updateDisplay(myLibrary);
-    })
+    if (author.value == '' || title.value == '' || pages.value =='') {
+        error.innerHTML = "Please fill out all entries before adding."
+    }   
+    else {
+            addBookToLibrary();
+            modal.style.display = "none";
+            author.value ="";
+            title.value = "";
+            pages.value = "";
+            content.innerHTML = "";
+            updateDisplay(myLibrary);
+        }
+});
 function createCard(author, title, pages) {
     let a = ` <div class ="card">
         <h3>AUTHOR</h3>
