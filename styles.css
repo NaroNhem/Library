@@ -162,6 +162,9 @@ label {
 .card>p {
   margin: 7px;
 }
+.cardID {
+  display: none;
+}
 .card>.remCont {
   grid-column: 2;
 }
