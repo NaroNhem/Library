@@ -95,20 +95,27 @@ window.onclick = function(event) {
       error.innerHTML = '';
     }
   }
-
-add.addEventListener('click', function (e) {
-    if (author.value == '' || title.value == '' || pages.value =='') {
+function formValid(author, title, pages) {
+    if (author == '' || title == '' || pages =='') {
         error.innerHTML = "Please fill out all entries before adding."
-    }   
-    else {
-            addBookToLibrary();
-            modal.style.display = "none";
-            author.value ="";
-            title.value = "";
-            pages.value = "";
-            content.innerHTML = "";
-            updateDisplay(myLibrary);
-        }
+        return false;
+    } else if (pages > 10000 || pages < 10) {
+        error.innerHTML = "Please enter a page number between 10 and 10000.";
+        return false;
+    } else {
+        return true;
+    }
+}
+add.addEventListener('click', function (e) {
+    if(formValid(author.value, title.value, pages.value) != false) {
+    addBookToLibrary();
+    modal.style.display = "none";
+    author.value ="";
+    title.value = "";
+    pages.value = "";
+    content.innerHTML = "";
+    updateDisplay(myLibrary);
+    }
 });
 function createCard(author, title, pages) {
     let a = ` <div class ="card">
